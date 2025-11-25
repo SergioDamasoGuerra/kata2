@@ -1,3 +1,7 @@
+package io;
+
+import model.Movie;
+
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
@@ -10,7 +14,7 @@ public class RemoteMovieLoader implements MovieLoader {
     @Override
     public List<Movie> loadAll() {
         try{
-            return loadFrom(new URL(url).openConnection())
+            return loadFrom(new URL(url).openConnection());
         }
         catch (IOException e) {
             throw new RuntimeException(e);
